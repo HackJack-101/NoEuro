@@ -14,8 +14,9 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 });
 
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+    console.log(changeInfo);
     if (activated && changeInfo.hasOwnProperty("status") && changeInfo.status === "complete") {
-        console.log(changeInfo);
+        console.log("match");
         chrome.tabs.executeScript(tabId, {
             file: "noEuro.js"
         }, function() {

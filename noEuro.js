@@ -1,8 +1,13 @@
-var whitespace = new RegExp('\S', 'ig');
 var euro = new RegExp('euro', 'ig');
-var football = new RegExp('football', 'ig');
+var match = new RegExp('football', 'ig');
+var football = new RegExp('match', 'ig');
+
+function testEuro(str) {
+    return euro.test(str) || football.test(str);
+}
 
 function doSomething(e, p) {
+    console.log(e);
     p.parentNode.removeChild(p);
 }
 
@@ -14,17 +19,9 @@ function recurse(element) {
         }
     }
 
-    if (element.nodeType == Node.TEXT_NODE &&
-        parent.tagName !== "SCRIPT" &&
-        whitespace.test(element.nodeValue) &&
-        (
-            euro.test(element.nodeValue) ||
-            football.test(element.nodeValue)
-        )) {
+    if (element.nodeType == Node.TEXT_NODE && parent.tagName !== "SCRIPT" && testEuro(element.nodeValue)) {
         doSomething(element, parent);
     }
 }
 
-window.addEventListener("load", function() {
-    recurse(document.body);
-}, true);
+recurse(document.body);
