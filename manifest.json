@@ -3,7 +3,7 @@
     "name": "NoEuro",
     "short_name": "No Euro",
     "default_locale": "en",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Hide all content about the Euro 2016",
     "browser_action": {
         "default_icon": "assets/icon128.png"
