@@ -3,7 +3,7 @@ Chrome extension to hide noise content about Euro 2016
 
 ## Installation
 
-* Go to [realeases](https://github.com/Jack3113/NoEuro/releases)
+* Go to [releases](https://github.com/Jack3113/NoEuro/releases/latest)
 * Download __NoEuro.crx__ from the last release
 * Go on your Chrome extensions page, by enter this address : __chrome://extensions/__
 * Drag and drop __NoEuro.crx__ from your download folder to the page
